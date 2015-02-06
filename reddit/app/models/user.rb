@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :comments
   has_many :views
+  has_many :votes
 
 
   def to_param
@@ -37,6 +38,26 @@ class User < ActiveRecord::Base
 
   def view_post(post)
     post.views.create(user: self) if views.find_by_post_id(post.id).nil?
+  end
+
+  def upvoted?(post)
+    votes.where(post_id: post.id, weight: 1).any?
+  end
+  
+  def downvoted?(post)
+    !upvoted?
+  end
+
+  def upvote(post)
+    votes.create(post: post, weight: 1) if votes.find_by_post_id(post.id).nil?
+  end
+
+  def downvote(post)
+    votes.create(post: post, weight: -1) if votes.find_by_post_id(post.id).nil?
+  end
+
+  def karma
+    posts.map { |post| post.votes.sum(:weight) }.sum
   end
 
 

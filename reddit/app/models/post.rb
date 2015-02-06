@@ -6,6 +6,7 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :views
   has_many :comments
+  has_many :votes
 
 
   def to_param

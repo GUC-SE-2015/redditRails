@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :log_in_required, only: [:create]
   def show
     @sub = Subreddit.find_by!(name: params[:subreddit_name])
     @post = @sub.posts.find_by!(title: params[:title])
@@ -11,6 +12,7 @@ class PostsController < ApplicationController
     @post = @sub.posts.new(post_params)
     @post.user = current_user
     if @post.save
+      current_user.upvote(@post)
       redirect_to [@sub, @post]
     else
       redirect_to @sub

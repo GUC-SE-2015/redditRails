@@ -13,12 +13,4 @@ class CommentsController < ApplicationController
     def comment_params
       params.require(:comment).permit(:body)
     end
-
-    def log_in_required
-      unless logged_in?
-        flash[:danger] = "Login Required."
-        redirect_to new_session_path
-      end
-    end
-
 end

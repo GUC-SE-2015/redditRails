@@ -1,0 +1,13 @@
+<div class="controls">
+  <div class="arrow">
+  <%= link_to upvote_subreddit_post_path(post.subreddit, post) do %>
+    <i class="fa fa-chevron-up"></i>
+  <% end %>
+  </div>
+  <div class="votes"><p><%= post.votes.sum(:weight) %>.</p></div>
+  <div>
+  <%= link_to downvote_subreddit_post_path(post.subreddit, post) do %>
+    <i class="fa fa-chevron-down"></i>
+  <% end %>
+  </div>
+</div>

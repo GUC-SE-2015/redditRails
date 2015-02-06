@@ -18,7 +18,12 @@ class SubredditsController < ApplicationController
   end
 
   def show
-    @sub = Subreddit.find_by!(name: params[:name])
+    if params[:name] == 'all'
+      @posts = Subreddit.all.flat_map {|sub| sub.posts}
+      render 'all'
+    else
+      @sub = Subreddit.find_by!(name: params[:name])  
+    end
     @post = Post.new
   end
 

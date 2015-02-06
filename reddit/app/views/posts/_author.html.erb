@@ -1,0 +1,1 @@
+<p class="post-by-who">asked <%= time_ago_in_words(post.created_at) %> ago by <%= link_to post.user.username, post.user %> in <%= link_to post.subreddit.name, post.subreddit  %></p>

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :subreddits, param: :name, path: '/r' do
     resources :posts, param: :title do 
       resources :comments
-      post 'upvote', to: 'votes#up', on: :member
-      post 'downvote', to: 'votes#down', on: :member
+      get 'upvote', to: 'votes#up', on: :member
+      get 'downvote', to: 'votes#down', on: :member
     end
   end
 end

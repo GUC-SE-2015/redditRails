@@ -25,6 +25,7 @@
 
   <div id="nav-links">
     <ul>
+    <li><%= link_to '/r/all', subreddit_path(name: 'all') %></li>
       <li><%= link_to 'ALL SUBS', subreddits_path %></li>
       <li><%= link_to 'NEW SUB', new_subreddit_path %></li>
       <li><%= link_to 'SUBREDDITS', subreddits_path %></li>

@@ -3,17 +3,13 @@
   <!-- START OF POST ELEMENT -->
   <div class="post">
     
-    <div class="controls">
-      <div class="arrow"><a href="#"><i class="fa fa-chevron-up"></i></a></div>
-      <div class="votes"><p><%= @post.votes.sum(:weight) %></p></div>
-      <div><a href="#"><i class="fa fa-chevron-down"></i></a></div>
-    </div>
+  <%= render partial: 'controls', locals: {post: @post} %>
 
     <div class="post-content">
       <p class="post-title">
         <%= link_to @post.title, [@sub, @post] %>
       </p>
-      <p class="post-by-who">asked <%= time_ago_in_words(@post.created_at) %> <%= link_to @post.user.username, @post.user %> </p>
+      <%= render partial: 'author', locals: {post: @post} %>
     </div>
 
     <div class="post-view-count">

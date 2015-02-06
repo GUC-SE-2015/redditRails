@@ -49,16 +49,21 @@ class User < ActiveRecord::Base
   end
 
   def upvote(post)
-    votes.create(post: post, weight: 1) if votes.find_by_post_id(post.id).nil?
+    remove_vote(post)
+    votes.create(post: post, weight: 1)
   end
 
   def downvote(post)
-    votes.create(post: post, weight: -1) if votes.find_by_post_id(post.id).nil?
+    remove_vote(post)
+    votes.create(post: post, weight: -1)
   end
 
   def karma
     posts.map { |post| post.votes.sum(:weight) }.sum
   end
 
+  def remove_vote(post)
+    votes.where(post: post).delete_all
+  end
 
 end

@@ -1,0 +1,33 @@
+<% provide(:title, "Signup") %>
+<% content_for :stylesheets do %>
+  <%= stylesheet_link_tag "signup.css", :media => "all", 'data-turbolinks-track' => true %>
+<% end %>
+<div class="centered-form">
+
+<h4 class="nice-black">
+  Sign up
+</h4>
+<p class="nice-black">Already have an account? <%= link_to "Sign in", new_session_path %></p>
+<hr>
+<% if @user.errors.any? %>
+  <div class="form-errors">
+    <h5>Errors:</h5>
+    <% @user.errors.full_messages.each do |msg| %>
+      <p class="error"><%= msg %></p>
+    <% end %>
+  </div> 
+<% end %>
+
+<%= form_for @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+
+  <%= f.label :password_confirmation, "Confirmation" %>
+  <%= f.password_field :password_confirmation %>
+  <%= f.submit "Create your account" %>
+<% end %>
+
+</div>

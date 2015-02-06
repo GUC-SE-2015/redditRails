@@ -1,0 +1,314 @@
+/*
+*= require_self
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com 
+*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+html, body {
+  /*font-family: "Raleway";*/
+  /*font-family: "Lato";*/
+  font-family: "Open Sans";
+}
+
+body {
+background: rgba(73,155,234,0.55);
+background: -moz-radial-gradient(center, ellipse cover, rgba(73,155,234,0.55) 0%, rgba(73,155,234,0.55) 8%, rgba(73,155,234,0.58) 14%, rgba(73,155,234,0.68) 35%, rgba(73,155,234,0.74) 49%, rgba(73,155,234,0.81) 63%, rgba(73,155,234,0.84) 69%, rgba(73,155,234,0.89) 80%, rgba(61,146,233,0.91) 86%, rgba(32,124,229,1) 100%);
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(73,155,234,0.55)), color-stop(8%, rgba(73,155,234,0.55)), color-stop(14%, rgba(73,155,234,0.58)), color-stop(35%, rgba(73,155,234,0.68)), color-stop(49%, rgba(73,155,234,0.74)), color-stop(63%, rgba(73,155,234,0.81)), color-stop(69%, rgba(73,155,234,0.84)), color-stop(80%, rgba(73,155,234,0.89)), color-stop(86%, rgba(61,146,233,0.91)), color-stop(100%, rgba(32,124,229,1)));
+background: -webkit-radial-gradient(center, ellipse cover, rgba(73,155,234,0.55) 0%, rgba(73,155,234,0.55) 8%, rgba(73,155,234,0.58) 14%, rgba(73,155,234,0.68) 35%, rgba(73,155,234,0.74) 49%, rgba(73,155,234,0.81) 63%, rgba(73,155,234,0.84) 69%, rgba(73,155,234,0.89) 80%, rgba(61,146,233,0.91) 86%, rgba(32,124,229,1) 100%);
+background: -o-radial-gradient(center, ellipse cover, rgba(73,155,234,0.55) 0%, rgba(73,155,234,0.55) 8%, rgba(73,155,234,0.58) 14%, rgba(73,155,234,0.68) 35%, rgba(73,155,234,0.74) 49%, rgba(73,155,234,0.81) 63%, rgba(73,155,234,0.84) 69%, rgba(73,155,234,0.89) 80%, rgba(61,146,233,0.91) 86%, rgba(32,124,229,1) 100%);
+background: -ms-radial-gradient(center, ellipse cover, rgba(73,155,234,0.55) 0%, rgba(73,155,234,0.55) 8%, rgba(73,155,234,0.58) 14%, rgba(73,155,234,0.68) 35%, rgba(73,155,234,0.74) 49%, rgba(73,155,234,0.81) 63%, rgba(73,155,234,0.84) 69%, rgba(73,155,234,0.89) 80%, rgba(61,146,233,0.91) 86%, rgba(32,124,229,1) 100%);
+background: radial-gradient(ellipse at center, rgba(73,155,234,0.55) 0%, rgba(73,155,234,0.55) 8%, rgba(73,155,234,0.58) 14%, rgba(73,155,234,0.68) 35%, rgba(73,155,234,0.74) 49%, rgba(73,155,234,0.81) 63%, rgba(73,155,234,0.84) 69%, rgba(73,155,234,0.89) 80%, rgba(61,146,233,0.91) 86%, rgba(32,124,229,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+}
+
+.circle-number {
+  background-color: rgba(0,0,0,0.95);
+  color: white;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 40px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.circle-number span {
+  margin-left: auto;
+  margin-right: auto;
+  width: 40px;
+  display: block;
+  text-align: center;
+  height: 100%;
+  margin-top: 10px;
+  font-size: 14pt;
+  font-weight: bolder;
+}
+
+body {
+  width: 100%;
+  background-size: cover;
+  height: 100%;
+  font-weight: 400;
+
+  /* Background image is centered vertically and horizontally at all times */
+  background-position: center center;
+  
+  /* Background image doesn't tile */
+  background-repeat: no-repeat;
+  
+  /* Background image is fixed in the viewport so that it doesn't move when 
+     the content's height is greater than the image's height */
+  background-attachment: fixed;
+}
+
+.nice-black {
+  color: #454545;
+}
+
+hr {
+  margin: 20px 0;
+  border: 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+
+.p80 {
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#logo img {
+  height: 68px;
+}
+
+.nav {
+  height: 70px;
+  padding: 16px;
+}
+
+.centered-form {
+  background-color: white;
+  /*min-height: 360px;*/
+  width: 320px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 2px 2px 12px #333333;
+  padding-bottom: 10px;
+  margin-bottom: 60px;
+}
+
+.container h2 {
+  font-size: 24pt;
+  font-weight: 600;
+  opacity: 0.7;
+  padding-left: 24px;
+}
+
+.container {
+  background-color: white;
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 2px 2px 12px #333333;
+  padding-top: 36px;
+  padding-bottom: 36px;
+}
+
+.container .dropbox-setup-steps {
+  padding-left: 28px;
+  padding-top: 24px;
+  font-size: 14pt;
+}
+
+.container div.dropbox-setup-steps {
+  opacity: 0.7;
+}
+
+.container div.dropbox-setup-steps p {
+  margin-bottom: 10px;
+}
+
+.container div.dropbox-image {
+  width: 160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container p.dropbox-info-cta {
+  padding: 20px;
+  width: 480px;
+  margin-left:auto;
+  margin-right:auto;
+  opacity: 0.8;
+  line-height: 1.3em;
+  font-weight: 500;
+}
+
+.container form.dropbox-auth input {
+  /*margin-bottom: 4px;*/
+  padding: 0;
+  /*background-color: white;*/
+  background-color: #fcfcfc;
+  border: 1px solid #ccc;
+  height: 40px;
+  font-size: 12pt;
+  font-weight: 200;
+  /*border-width: 0px;*/
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 280px;
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  margin-top: 6px;
+  /*font-family: "Raleway";*/
+}
+
+.container form.dropbox-auth {
+  opacity: 1;
+}
+
+.container form.dropbox-auth input[type=submit] {
+  margin-top: 12px;
+  /*width: 100%;*/
+  width: 160px;
+  background-color: rgba(233,106,83,1);
+  color: white;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+}
+
+.container form.dropbox-auth input:focus {
+  outline: none;
+  border-color: #CB6C51;
+}
+
+.container div.dropbox-cta {
+  text-align: center;
+  margin-right: auto;
+  margin-left:auto;
+  color: white;
+  opacity: 1;
+}
+
+.container div.dropbox-cta a { 
+  opacity: 1;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*padding-left: 2px;*/
+  /*padding-right: 2px;*/
+  background-color: rgba(71,123,232,1);
+}
+
+.container div.dropbox-cta a:hover { 
+  opacity: 0.8;
+  color:white;
+}
+
+.container div.dropbox-image img {
+  width: 160px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.centered-form form input {
+  display: block;
+  /*margin-bottom: 4px;*/
+  padding: 0;
+  /*background-color: white;*/
+  background-color: #fcfcfc;
+  border: 1px solid #ccc;
+  height: 40px;
+  font-size: 12pt;
+  font-weight: 200;
+  /*border-width: 0px;*/
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6px;
+  /*font-family: "Raleway";*/
+}
+
+.centered-form form input:focus {
+  outline: none;
+  border-color: #3F96F3;
+}
+
+.centered-form form input[type=submit] {
+  margin-top: 12px;
+  width: 100%;
+  background-color: #3F96F3;
+  color: white;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+}
+
+.centered-form form input[type=submit]:hover {
+  opacity: 0.9;
+  padding-bottom: 2px;
+}
+
+input[type='submit'] {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;  
+}
+
+input {
+  border-radius: 0;
+}
+
+.centered-form h4 {
+  font-size: 28pt;
+  padding: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.centered-form p {
+  font-size: 12pt;
+  padding-left: 16px;
+  opacity: 0.6;
+}
+
+a {
+  color: #9ED1EB;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+.form-errors {
+  background-color: #DB0F13;
+  width: 280px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 14px;
+}
+
+.form-errors h5 {
+  color: white;
+  font-weight: 700;
+  padding: 6px;
+}
+
+p.error {
+  padding: 6px;
+  color: white;
+  opacity: 1;
+}
+
+
+
+
+
+
+

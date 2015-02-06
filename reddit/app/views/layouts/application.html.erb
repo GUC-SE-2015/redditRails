@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield(:title) %></title>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= yield(:stylesheets) %>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= yield(:header) if @content_for_header %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="nav">
+  <div id="logo-container">
+    <div id="logo">
+    <%= image_tag "se-csen-603.png" %>
+    </div>
+  </div>
+  <div id="search-form">
+    <form>
+      <input type="text" placeholder="Search..."/>
+    </form>
+  </div>
+
+  <div id="nav-links">
+    <ul>
+      <% if logged_in? %>
+        <li><%= link_to "LOGOUT", sessions_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "SIGN IN", new_session_path %></li>
+        <li><%= link_to "SIGN UP", new_user_path, class: "sign-up" %></li>
+      <% end -%>
+    </ul>
+  </div>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

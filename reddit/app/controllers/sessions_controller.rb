@@ -6,9 +6,11 @@ class SessionsController < ApplicationController
   
   def create
     begin
-      user = User.find(params[:session][:username])
-      if user.authenticate(params[:session][:password])
+      session = params[:session]
+      user = User.find_by(username: session[:username])
+      if user.authenticate(session[:password])
         log_in user
+        session[:remember_me] == '1' ? remember(user): forget(user)
         redirect_to user
       else
         @errors = ['Invalid username or password']
@@ -20,8 +22,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    raise ActionController::BadRequest if !logged_in?
-    log_out
+    log_out if logged_in?
     redirect_to root_url
   end
 end

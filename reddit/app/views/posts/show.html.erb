@@ -1,0 +1,45 @@
+<div class="container">
+
+  <!-- START OF POST ELEMENT -->
+  <div class="post">
+    
+    <div class="controls">
+      <div class="arrow"><a href="#"><i class="fa fa-chevron-up"></i></a></div>
+      <div class="votes"><p>2048</p></div>
+      <div><a href="arrow"><i class="fa fa-chevron-down"></i></a></div>
+    </div>
+
+    <div class="post-content">
+      <p class="post-title">
+        <%= link_to @post.title, [@sub, @post] %>
+      </p>
+      <p class="post-by-who">asked <%= time_ago_in_words(@post.created_at) %> <%= link_to @post.user.username, @post.user %> </p>
+    </div>
+
+    <div class="post-view-count">
+      <i class="fa fa-eye"></i> <%= @post.views.count %>
+    </div>
+
+    <div class="post-comment-count">
+      <i class="fa fa-comments"></i> <%= @post.comments.count %>
+    </div>
+  </div>
+  <!-- END OF POST ELEMENT -->
+  <% if logged_in? %>
+    <div class="comment-form">
+      <h3>Post a comment</h3>
+      <%= form_for [@sub, @post, @comment] do |f| %>
+      <%= f.label :body %>
+      <%= f.text_area :body %>
+      <%= f.submit "Add comment" %>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <div class="comments">
+  <% @post.comments.each do |comment| %>
+    <%= render partial: "comments/list", locals: {comment: comment} %>
+  <% end %>
+  </div>
+</div>

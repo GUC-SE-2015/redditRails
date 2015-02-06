@@ -1,0 +1,23 @@
+<% provide(:title, 'New Subreddit') %>
+<div class="centered-form">
+
+  <h4 class="nice-black">
+    New Subreddit
+  </h4>
+  <hr>
+
+  <% if @sub.errors.any? %>
+    <div class="form-errors">
+      <h5>Errors:</h5>
+      <% @sub.errors.full_messages.each do |msg| %>
+        <p class="error"><%= msg %></p>
+      <% end %>
+    </div> 
+  <% end %>
+  <%= form_for @sub do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create subreddit" %>
+  <% end %>
+  
+</div>

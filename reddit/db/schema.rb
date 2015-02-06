@@ -11,13 +11,56 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204030206) do
+ActiveRecord::Schema.define(version: 20150206163112) do
 
-  create_table "users", id: false, force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",        null: false
+    t.string   "body"
+    t.integer  "user_id"
+    t.integer  "subreddit_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "posts", ["subreddit_id"], name: "index_posts_on_subreddit_id"
+  add_index "posts", ["title"], name: "index_posts_on_title"
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
+
+  create_table "subreddits", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subreddits", ["name"], name: "index_subreddits_on_name"
+
+  create_table "users", force: :cascade do |t|
     t.string   "username",        null: false
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "remember_digest"
   end
+
+  create_table "views", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "views", ["post_id"], name: "index_views_on_post_id"
+  add_index "views", ["user_id"], name: "index_views_on_user_id"
 
 end

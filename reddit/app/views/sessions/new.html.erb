@@ -1,7 +1,4 @@
 <% provide(:title, "Login") %>
-<% content_for :stylesheets do %>
-  <%= stylesheet_link_tag "signup.css", :media => "all", 'data-turbolinks-track' => true %>
-<% end %>
 <div class="centered-form">
 
 <h4 class="nice-black">
@@ -24,6 +21,9 @@
 
   <%= f.label :password %>
   <%= f.password_field :password %>
+
+  <%= f.label :remember_me %>
+  <%= f.check_box :remember_me %>
   <%= f.submit "Sign in" %>
 <% end %>
 </div>

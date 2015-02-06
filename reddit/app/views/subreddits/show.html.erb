@@ -1,0 +1,18 @@
+<% provide(:title, @sub.name) %>
+
+<% if logged_in? %>
+  <%= form_for [@sub, @post] do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <%= f.submit "Create Post" %>
+  <% end %>
+<% end %>
+<div class="container">
+<% @sub.posts.each do |post| %>
+  <%= render partial: "posts/list", locals: {post: post} %>
+<% end %>
+
+
+</div>

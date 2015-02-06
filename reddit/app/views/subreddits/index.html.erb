@@ -1,0 +1,15 @@
+<% provide(:title, 'Subreddits') %>
+<div class="container">
+
+<% @subs.each do |sub| %>
+  <div class="post">
+    <div class="post-content">
+      <p class="post-title">
+        <%= link_to sub.name, sub  %>
+      </p>
+    </div>
+  </div>
+<% end %>
+
+</div>
+

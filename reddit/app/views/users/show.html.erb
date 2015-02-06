@@ -1,1 +1,21 @@
 <% provide(:title, @user.username) %>
+
+
+
+<div class="container">
+<h4 class="nice-black">
+  Posts
+</h4>
+<% @user.posts.each do |post| %>
+  <%= render partial: "posts/list", locals: {post: post} %>
+<% end %>
+</div>
+
+<div class="container">
+<h4 class="nice-black">
+  Comments
+</h4>
+<% @user.comments.each do |comment| %>
+  <%= render partial: "comments/list", locals: {comment: comment} %>
+<% end %>
+</div>

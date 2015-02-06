@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   def show
     # Exclamation point forces RecordNotFound
     # Which redirects to 404 page
-    @user = User.find(params[:username]) 
+    @user = User.find_by(username: params[:username]) 
   end
 
   def index

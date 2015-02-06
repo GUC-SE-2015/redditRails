@@ -25,8 +25,11 @@
 
   <div id="nav-links">
     <ul>
+      <li><%= link_to 'ALL SUBS', subreddits_path %></li>
+      <li><%= link_to 'NEW SUB', new_subreddit_path %></li>
+      <li><%= link_to 'SUBREDDITS', subreddits_path %></li>
       <% if logged_in? %>
-        <li><%= link_to "LOGOUT", sessions_path, method: :delete %></li>
+        <li><%= link_to "LOGOUT", session_path, method: :delete %></li>
       <% else %>
         <li><%= link_to "SIGN IN", new_session_path %></li>
         <li><%= link_to "SIGN UP", new_user_path, class: "sign-up" %></li>
